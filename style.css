@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap");
+
+body {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #4a4a4a;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  color: #6d6875;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Organise les éléments en colonne */
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px; /* Évite que le formulaire soit trop large */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #6d6875;
+}
+
+select,
+input {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 50%;
+  margin-bottom: 5px;
+  background: #fff;
+  color: #333;
+  font-family: "Quicksand", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+select:hover,
+input:hover {
+  border-color: #f6a192;
+  cursor: pointer;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ff847c;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: block; /* Force le bouton à prendre toute la largeur disponible */
+  margin: 20px auto; /* Centre le bouton horizontalement */
+}
+
+button:hover {
+  background: #e84a5f;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.result-text {
+  margin-bottom: 20px;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.currency-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+select {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out, opacity 0.3s;
+}
+.swap-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 90px;
+  height: 70px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.swap-button:hover {
+  background-color: #45a049;
+}
+.swap-button:active {
+  transform: rotate(180deg);
+}
+/* Effet de transition */
+.swapping {
+  transform: translateX(100px);
+  opacity: 0.5;
+}
+
+@keyframes flameGlow {
+  0% {
+    text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff4500;
+  }
+  50% {
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347;
+  }
+  100% {
+    text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff4500;
+  }
+}
+
+.flame-text {
+  color: #f7dda0;
+  text-align: center;
+  animation: flameGlow 3s infinite alternate ease-in-out;
+}
+
+#currency_to {
+  margin-bottom: 20px;
+}
