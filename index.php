@@ -88,6 +88,10 @@ function swapCurrencies() {
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">   <title>Document</title>
    <link rel="stylesheet" href="style.css">
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <!-- Icônes pour Mobiles -->
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+   <link rel="apple-touch-icon" sizes="32x32" href="favicon.png.png">
+   <link rel="manifest" href="site.webmanifest">
 </head>
 
 <body>
