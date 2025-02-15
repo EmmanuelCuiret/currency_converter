@@ -92,6 +92,15 @@ function swapCurrencies() {
    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
    <link rel="apple-touch-icon" sizes="32x32" href="/images/favicon_32x32.png">
    <link rel="manifest" href="site.webmanifest">
+
+   <script>
+      //Bloque le retour en arrière dans l'historique des pages
+      window.addEventListener("popstate", function (event) {
+      history.pushState(null, null, location.href); // Remet la même page dans l'historique
+      });
+      history.pushState(null, null, location.href); // Ajoute un état initial
+   </script>
+
 </head>
 
 <body>
