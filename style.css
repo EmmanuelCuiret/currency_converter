@@ -71,19 +71,21 @@ button {
   background: #ff847c;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: block; /* Force le bouton à prendre toute la largeur disponible */
   margin: 20px auto; /* Centre le bouton horizontalement */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre subtile */
 }
 
 button:hover {
   background: #e84a5f;
   transform: translateY(-2px);
-  cursor: pointer;
+  box-shadow: 0px 6px 15px rgba(232, 74, 95, 0.8); /* Glow rouge doux */
 }
 
 button:active {
   transform: translateY(2px);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .result-text {
@@ -123,7 +125,7 @@ select {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6), 0px 0px 10px rgba(76, 175, 80, 0.8);
 }
 .swap-button:hover {
   background-color: #45a049;

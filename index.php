@@ -47,19 +47,37 @@ function swapCurrencies() {
          // Suppression de la classe pour réinitialiser l'effet
          fromCurrency.classList.remove("swapping");
          toCurrency.classList.remove("swapping");
-      }, 500);
+      }, 400);
    }
 
    function validateForm() {
-   let amount = document.getElementById("amount").value;
+      let amount = document.getElementById("amount").value;
 
-   if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
-      alert("Please enter a valid amount.");
-      return false; // Empêche la soumission du formulaire
+      if (
+         amount === "" || 
+         isNaN(amount) || 
+         parseFloat(amount) <= 0 || 
+         !/^\d+(\.\d{1,2})?$/.test(amount) || 
+         amount.includes("-") // Empêche les nombres négatifs
+      ) {
+         Swal.fire({
+            icon: "warning",
+            title: "Invalid Amount",
+            text: "Please enter a valid positive amount with at most 2 decimal places.",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK",
+            backdrop: true, // Ajoute un fond semi-transparent
+            customClass: {
+               title: "swal-title",
+               popup: "swal-popup",
+               confirmButton: "swal-button"
+            }
+         });
+         return false; // Empêche l’envoi du formulaire
+         }
+      return true; // Formulaire valide
    }
 
-   return true; // Autorise la soumission
-}
 </script>
 
 <!DOCTYPE html>
@@ -69,15 +87,20 @@ function swapCurrencies() {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
    <link rel="stylesheet" href="style.css">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-<form method="get" action="target.php" onsubmit="return validateForm()">
+<form method="get" action="target.php" onsubmit="return validateForm()" novalidate>
    <h1 class="flame-text">Pick your currency!</h1>
 
    <label for="currency_from">From currency:</label>
       <select name="currency_from" id="currency_from">
          <?php foreach ($currencies as $currency) { ?>
-            <option value="<?php echo $currency['code']; ?>"><?php echo $currency["flag"] . " " . $currency["name"]; ?></option>
+            <option value="<?php echo $currency['code']; ?>"
+            <?php echo ($currency['code'] === 'EUR') ? 'selected' : ''; ?>>
+            <?php echo $currency["flag"] . " " . $currency["name"]; ?>
+            </option>
          <?php } ?>      
        </select>
 
@@ -91,9 +114,14 @@ function swapCurrencies() {
        </select>
 
    <label for="amount">Enter amount in local currency:</label>
-   <input type="number" name="amount" id="amount" step="0.01" value="<?php $amount ?>">
+   <input type="number" name="amount" id="amount">
    <button type="submit">Submit</button>
+   <p>Exchange rate of february 14, 2025</p>
 </form>
+
+<script>
+ 
+</script>
 
 </body>
 </html>
