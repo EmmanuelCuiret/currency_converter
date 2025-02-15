@@ -15,13 +15,13 @@ function checkVersion() {
          const currentVersion = localStorage.getItem("app_version");
          if (currentVersion && currentVersion !== data.version) {
             Swal.fire({
-               title: "Nouvelle mise à jour 🚀",
-               text: `Vous utilisez maintenant la version (${data.version}) !`,
+               title: "New update 🚀",
+               text: `You are now using version (${data.version}) !`,
                icon: "info",
                confirmButtonText: "OK",
                confirmButtonColor: "#3085d6",
                showCancelButton: false,
-               cancelButtonText: "Plus tard",
+               cancelButtonText: "Later",
                allowOutsideClick: false
             }).then((result) => {
                if (result.isConfirmed) {
