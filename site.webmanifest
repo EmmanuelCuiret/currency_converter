@@ -1,6 +1,6 @@
 {
    "name": "Currency Converter",
-   "short_name": "Converter €",
+   "short_name": "Converter",
    "description": "An easy-to-use currency converter",
    "start_url": "/",
    "display": "standalone",
