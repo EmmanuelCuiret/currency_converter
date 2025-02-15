@@ -29,6 +29,7 @@ function convertCurrency($amount, $currency_from, $currency_to, $exchange_rate) 
    } 
 
    $converted_amount = $amount * ($exchange_rate[$currency_to] / $exchange_rate[$currency_from]);
+   
    return number_format($converted_amount, 2, ',', ' ') . " " . $currency_to;
 }
 
@@ -39,9 +40,9 @@ if (!isset($_GET['currency_from'], $_GET['currency_to'], $_GET['amount']) || !is
 
 $currency_from = strtoupper($_GET['currency_from']);
 $currency_to = strtoupper($_GET['currency_to']);
-$amount = number_format($_GET['amount'], 2, ',', ' '); //Formatage avant affichage
+$amount = floatval($_GET['amount']); //Conversion pour calcul
 $conversion_result = convertCurrency($amount, $currency_from, $currency_to, $exchange_rate);
-
+$formatted_amount = number_format($amount, 2, ',', ' '); //Conversion pour affichage
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +59,7 @@ $conversion_result = convertCurrency($amount, $currency_from, $currency_to, $exc
    <h1>💰 Currency Conversion 💰</h1>
    <div class="result-box">
       <p class="result-text">
-         <?php echo "{$amount} {$currency_from} = <strong>{$conversion_result}</strong>"; ?>
+         <?php echo "{$formatted_amount} {$currency_from} = <strong>{$conversion_result}</strong>"; ?>
       </p>
    </div>
    

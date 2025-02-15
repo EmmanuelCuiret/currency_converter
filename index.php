@@ -49,6 +49,17 @@ function swapCurrencies() {
          toCurrency.classList.remove("swapping");
       }, 500);
    }
+
+   function validateForm() {
+   let amount = document.getElementById("amount").value;
+
+   if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
+      alert("Please enter a valid amount.");
+      return false; // Empêche la soumission du formulaire
+   }
+
+   return true; // Autorise la soumission
+}
 </script>
 
 <!DOCTYPE html>
@@ -60,7 +71,7 @@ function swapCurrencies() {
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="get" action="target.php">
+<form method="get" action="target.php" onsubmit="return validateForm()">
    <h1 class="flame-text">Pick your currency!</h1>
 
    <label for="currency_from">From currency:</label>
