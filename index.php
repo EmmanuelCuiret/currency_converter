@@ -99,23 +99,23 @@ function swapCurrencies() {
    <h1 class="flame-text">Pick your currency!</h1>
 
    <label for="currency_from">From currency:</label>
-      <select name="currency_from" id="currency_from">
-         <?php foreach ($currencies as $currency) { ?>
-            <option value="<?php echo $currency['code']; ?>"
-            <?php echo ($currency['code'] === 'EUR') ? 'selected' : ''; ?>>
-            <?php echo $currency["flag"] . " " . $currency["name"]; ?>
-            </option>
-         <?php } ?>      
-       </select>
+   <select name="currency_from" id="currency_from">
+      <?php foreach ($currencies as $currency) { ?>
+         <option value="<?php echo $currency['code']; ?>"><?php echo $currency["flag"] . " " . $currency["name"]; ?></option>
+      <?php } ?>    
+   </select>
 
    <button type="button" class="swap-button" onclick="swapCurrencies()">🔄 Swap</button>
 
    <label for="currency_to">To currency:</label>
-      <select name="currency_to" id="currency_to">
-         <?php foreach ($currencies as $currency) { ?>
-            <option value="<?php echo $currency['code']; ?>"><?php echo $currency["flag"] . " " . $currency["name"]; ?></option>
-         <?php } ?>      
-       </select>
+   <select name="currency_to" id="currency_to">
+      <?php foreach ($currencies as $currency) { ?>
+         <option value="<?php echo $currency['code']; ?>"
+         <?php echo ($currency['code'] === 'EUR') ? 'selected' : ''; ?>>
+         <?php echo $currency["flag"] . " " . $currency["name"]; ?>
+         </option>
+      <?php } ?>               
+   </select>
 
    <label for="amount">Enter amount in local currency:</label>
    <input type="number" name="amount" id="amount">
