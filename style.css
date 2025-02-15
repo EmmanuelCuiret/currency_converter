@@ -64,6 +64,12 @@ input:hover {
 }
 
 button {
+  /*Empêcher la sélection de texte*/
+  user-select: none; /* Empêche la sélection de texte */
+  -webkit-user-select: none; /* Pour les navigateurs basés sur WebKit (Chrome, Safari) */
+  -moz-user-select: none; /* Pour Firefox */
+  -ms-user-select: none; /* Pour Internet Explorer/Edge */
+
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px 20px;
