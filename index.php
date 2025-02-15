@@ -78,7 +78,6 @@ function swapCurrencies() {
          }
       return true; // Formulaire valide
    }
-
 </script>
 
 <!DOCTYPE html>
@@ -87,6 +86,7 @@ function swapCurrencies() {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">   <title>Document</title>
    <link rel="stylesheet" href="style.css">
+   <script src="updateChecker.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <!-- Icônes pour Mobiles -->
    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
