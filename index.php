@@ -61,17 +61,18 @@ function swapCurrencies() {
          amount.includes("-") // Empêche les nombres négatifs
       ) {
          Swal.fire({
-            icon: "warning",
-            title: "Invalid Amount",
-            text: "Please enter a valid positive amount with at most 2 decimal places.",
-            confirmButtonColor: "#3085d6",
-            confirmButtonText: "OK",
-            backdrop: true, // Ajoute un fond semi-transparent
-            customClass: {
-               title: "swal-title",
-               popup: "swal-popup",
-               confirmButton: "swal-button"
-            }
+         icon: "warning",
+         title: "Invalid Amount",
+         text: "Please enter a valid positive amount with at most 2 decimal places.",
+         confirmButtonColor: "#3085d6",
+         confirmButtonText: "OK",
+         backdrop: true,
+         scrollbarPadding: false, // Désactive le recalcul du padding
+         customClass: {
+            title: "swal-title",
+            popup: "swal-popup",
+            confirmButton: "swal-button"
+         }
          });
          return false; // Empêche l’envoi du formulaire
          }
@@ -84,8 +85,7 @@ function swapCurrencies() {
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">   <title>Document</title>
    <link rel="stylesheet" href="style.css">
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
