@@ -89,8 +89,8 @@ function swapCurrencies() {
    <link rel="stylesheet" href="style.css">
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <!-- Icônes pour Mobiles -->
-   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-   <link rel="apple-touch-icon" sizes="32x32" href="favicon.png.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
+   <link rel="apple-touch-icon" sizes="32x32" href="/images/favicon_32x32.png">
    <link rel="manifest" href="site.webmanifest">
 </head>
 
