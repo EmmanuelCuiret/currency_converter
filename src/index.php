@@ -53,13 +53,7 @@ function swapCurrencies() {
    function validateForm() {
       let amount = document.getElementById("amount").value;
 
-      if (
-         amount === "" || 
-         isNaN(amount) || 
-         parseFloat(amount) <= 0 || 
-         !/^\d+(\.\d{1,2})?$/.test(amount) || 
-         amount.includes("-") // Empêche les nombres négatifs
-      ) {
+      if (amount.trim() === "" || isNaN(amount) || parseFloat(amount) <= 0 || !/^\d*\.?\d{0,2}$/.test(amount)) {
          Swal.fire({
          icon: "warning",
          title: "Invalid Amount",
@@ -75,7 +69,7 @@ function swapCurrencies() {
          }
          });
          return false; // Empêche l’envoi du formulaire
-         }
+      }
       return true; // Formulaire valide
    }
 </script>
@@ -84,14 +78,15 @@ function swapCurrencies() {
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">   <title>Document</title>
-   <link rel="stylesheet" href="style.css">
-   <script src="updateChecker.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">   
+   <title>Currency converter</title>
+   <link rel="stylesheet" href="/assets/style.css">
+   <script src="/assets/updateChecker.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <!-- Icônes pour Mobiles -->
-   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
-   <link rel="apple-touch-icon" sizes="32x32" href="/images/favicon_32x32.png">
-   <link rel="manifest" href="site.webmanifest">
+   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_32x32.png">
+   <link rel="apple-touch-icon" sizes="32x32" href="/assets/images/favicon_32x32.png">
+   <link rel="manifest" href="/assets/manifest.json">
 
    <script>
       //Bloque le retour en arrière dans l'historique des pages
@@ -104,7 +99,7 @@ function swapCurrencies() {
 </head>
 
 <body>
-<form method="get" action="target.php" onsubmit="return validateForm()" novalidate>
+<form method="get" action="/src/target.php" onsubmit="return validateForm()" novalidate>
    <h1 class="flame-text">Pick your currency!</h1>
 
    <label for="currency_from">From currency:</label>
@@ -114,7 +109,7 @@ function swapCurrencies() {
       <?php } ?>    
    </select>
 
-   <button type="button" class="swap-button" onclick="swapCurrencies()">🔄 Swap</button>
+   <button type="button" class="swap-button" onclick="swapCurrencies()" aria-label="Swap currencies">🔄 Swap</button>
 
    <label for="currency_to">To currency:</label>
    <select name="currency_to" id="currency_to">
@@ -127,9 +122,8 @@ function swapCurrencies() {
    </select>
 
    <label for="amount">Enter amount in local currency:</label>
-   <input type="number" name="amount" id="amount">
+   <input type="number" name="amount" id="amount" placeholder="Enter amount (e.g. 10.50)">
    <button type="submit">Submit</button>
-   <p>Exchange rate of february 14, 2025</p>
 </form>
 
 <script>

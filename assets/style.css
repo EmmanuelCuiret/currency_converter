@@ -63,6 +63,10 @@ input:hover {
   cursor: pointer;
 }
 
+#amount {
+  width: 60%;
+}
+
 button {
   /*Empêcher la sélection de texte*/
   user-select: none; /* Empêche la sélection de texte */
@@ -168,4 +172,11 @@ select {
 
 #currency_to {
   margin-bottom: 20px;
+}
+
+.update-info {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
 }

@@ -9,7 +9,7 @@ if (!window.Swal) {
 }
 
 function checkVersion() {
-   fetch("https://currency-converter-at78.onrender.com/version.json")
+   fetch("https://currency-converter-at78.onrender.com/src/version.json")
       .then(response => response.json())
       .then(data => {
          const currentVersion = localStorage.getItem("app_version");
@@ -31,5 +31,5 @@ function checkVersion() {
          }
          localStorage.setItem("app_version", data.version);
       })
-      .catch(error => console.error("Erreur lors de la récupération de la version :", error));
+      .catch(error => console.error("Error retrieving version :", error));
 }
